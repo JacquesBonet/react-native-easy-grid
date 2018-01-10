@@ -3,10 +3,13 @@
 exports[`renders correctly 1`] = `
 <View
   style={
-    Object {
-      "flex": 1,
-      "flexDirection": "column",
-    }
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "flexWrap": "wrap",
+      },
+    ]
   }
 />
 `;

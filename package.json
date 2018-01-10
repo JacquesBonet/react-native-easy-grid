@@ -4,56 +4,28 @@
   "version": "0.1.16",
   "private": false,
   "dependencies": {
-    "lodash": "^4.11.1"
+    "glamorous-native": "^1.2.1"
   },
   "scripts": {
     "test": "jest"
   },
   "jest": {
     "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "acorn",
-      "core-js",
-      "isarray",
-      "wordwrap",
-      "convert-source-map",
-      "source-map",
-      "which",
-      "assert-plus",
-      "esprima",
-      "path-exists",
-      "glob",
-      "object-assign",
-      "repeating",
-      "supports-color",
-      "json-stable-stringify",
-      "minimist",
-      "duplexer2",
-      "readable-stream",
-      "extend",
-      "lru-cache",
-      "minimatch",
-      "async",
-      "punycode",
-      "clone",
-      "graceful-fs",
-      "strip-bom",
-      "through2",
-      "vinyl",
-      "camelcase"
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|glamorous-native)"
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.4",
-    "eslint": "^2.9.0",
-    "eslint-plugin-react": "^5.0.1",
-    "eslint-plugin-react-native": "^1.0.0",
-    "babel-jest": "20.0.3",
-    "babel-preset-react-native": "1.9.2",
-    "jest": "20.0.3",
-    "react": "16.0.0-alpha.12",
-    "react-test-renderer": "16.0.0-alpha.12",
-    "react-native": "0.46.0"
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.0.4",
+    "babel-preset-react-native": "^4.0.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react-native": "^3.2.0",
+    "jest": "^22.0.5",
+    "react": "^16.2.0",
+    "react-native": "^0.52.0",
+    "react-test-renderer": "^16.2.0"
   },
   "repository": {
     "type": "git",

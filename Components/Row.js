@@ -1,52 +1,33 @@
 'use strict';
 
-import React, {Component} from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import * as React from "react"
+import glamorous from "glamorous-native"
 
-import computeProps from '../Utils/computeProps';
+const View = glamorous.View
+const TouchableOpacity = glamorous.TouchableOpacity
 
 
-export default class RowNB extends Component {
-    prepareRootProps() {
-
-        var type = {
-        	flexDirection: 'row',
-        	flex: (this.props.size) ? this.props.size : (this.props.style && this.props.style.height) ? 0 : 1,
-        }
-
-        var defaultProps = {
-            style: type
-        }
-        return computeProps(this.props, defaultProps);
-
+const Row = (props) => {
+    const { size = null, height = null} = props
+    const newProps  = {
+        flex: size ? size : height ? 0 : 1,
+        flexDirection: "row",
+        flexWrap: "wrap",
     }
 
-    setNativeProps(nativeProps) {
-      this._root.setNativeProps(nativeProps);
+    if (props.onPress) {
+        return (
+            <TouchableOpacity onPress={props.onPress}>
+                <View {...props} {...newProps}>
+                    {props.children}
+                </View>
+            </TouchableOpacity>
+        )
+    } else {
+        return (
+            <View {...props} {...newProps} />
+        )
     }
-
-    render() {
-      if(this.props.onPress){
-        return(
-            <TouchableOpacity onPress={this.props.onPress}>
-          <View
-        ref={component => this._root = component}
-        {...this.props}
-        {...this.prepareRootProps()}
-      >{this.props.children}</View>
-          </TouchableOpacity>
-      );
-      }
-      else{
-        return(
-          <View
-            ref={component => this._root = component}
-            {...this.props}
-            {...this.prepareRootProps()}
-          >{this.props.children}</View>
-        );
-      }
-    }
-
-
 }
+
+export default  Row
