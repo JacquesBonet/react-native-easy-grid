@@ -1,6 +1,6 @@
 {
   "name": "react-native-easy-grid",
-  "description": "Easy React Native Layout & Grid for the Dumb",
+  "description": "Easy React Native Layout & Grid using glamorous",
   "version": "0.1.16",
   "private": false,
   "dependencies": {
