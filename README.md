@@ -1,7 +1,15 @@
 # React Native Easy Grid 🐵
 ![Master Build Status](https://travis-ci.org/GeekyAnts/react-native-easy-grid.svg?branch=master) <br />
 
-This is NOT-JUST-ANOTHER-GRID-LAYOUT library! We are trying to simplify flexbox with easier approach.
+
+* This version of react-native-easy-grid use glamorous-native
+
+* Implementation of Col and Row is far easier than the original version
+
+* this version has no side effect has that happen with the original release
+
+* I removed the Grid component, which is not usefull with this release
+
 
 ## Installation
 
@@ -14,16 +22,16 @@ npm install react-native-easy-grid --save
 ### Include the components
 
 ```
-import { Col, Row, Grid } from "react-native-easy-grid";
+import { Col, Row } from "react-native-easy-grid";
 ```
 
 ### 1. Two columns (50% and 50%)
 
 ```
-<Grid>
+<Row>
     <Col></Col>
     <Col></Col>
-</Grid>
+</Row>
 ```
 
 ![col-50-50](Examples/col-50-50.png "Column 50% and 50% example")
@@ -35,10 +43,10 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 ### 2. Two rows
 
 ```
-<Grid>
+<Col>
     <Row></Row>
     <Row></Row>
-</Grid>
+</Col>
 ```
 
 ![row-50-50](Examples/row-50-50.png "Row 50% and 50% example")
@@ -47,19 +55,19 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 ### 3. Two rows (75% and 25%)
 
 ```
-<Grid>
+<Col>
     <Row size={75}></Row>
     <Row size={25}></Row>
-</Grid>
+</Col>
 ```
 
 This is exactly same as
 
 ```
-<Grid>
+<Col>
     <Row size={3}></Row>
     <Row size={1}></Row>
-</Grid>
+</Col>
 ```
 
 ![row-75-25](Examples/row-75-25.png "Row 75% and 25% example")
@@ -70,22 +78,22 @@ This is exactly same as
 ### 4. Three columns (33.33% each)
 
 ```
-<Grid>
+<Row>
     <Col></Col>
     <Col></Col>
     <Col></Col>
-</Grid>
+</Row>
 ```
 ![col-33-33-33](Examples/col-33-33-33.png "Column 33.33% each")
 
 ### 5. Three rows (50%, 25% and 25%)
 
 ```
-<Grid>
+<Col>
     <Row size={2}></Row>
     <Row size={1}></Row>
     <Row size={1}></Row>
-</Grid>
+</Col>
 ```
 
 ![row-50-25-25](Examples/row-50-25-25.png "Row 50%, 25% and 50% example")
@@ -103,7 +111,7 @@ This is exactly same as
 </table>
 
 ```
-<Grid>
+<Row>
     <Col>
         <Text>1</Text>
     </Col>
@@ -115,7 +123,7 @@ This is exactly same as
             <Text>3</Text>
         </Row>
     </Col>
-</Grid>
+</Row>
 ```
 
 ![complex](Examples/complex.png "Complex and Nested Layouts")
@@ -125,14 +133,14 @@ This is exactly same as
 ### 7. Fixed width and fluid width combination
 
 ```
-<Grid>
+<Row>
     <Col style={{ width: 40 }}>
         <Text>Fixed width</Text>
     </Col>
     <Col>
         <Text>Fluid width</Text>
     </Col>
-</Grid>
+</Row>
 ```
 
 ![col-fluid-fixed.png](Examples/col-fluid-fixed.png "Column fluid and fixed example")
@@ -141,14 +149,14 @@ This is exactly same as
 ### 8. Fixed height and fluid height combination
 
 ```
-<Grid>
+<Row>
     <Row style={{ height: 40 }}>
         <Text>Fixed width</Text>
     </Row>
     <Row>
         <Text>Fluid width</Text>
     </Row>
-</Grid>
+</Row>
 ```
 
 Do you think anything could be simpler than that? This repo is part of our bigger project called [NativeBase.io](http://nativebase.io). Do check that!
